@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Category from "./pages/Category";
 import Substitutes from './pages/Substitutes';
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/sustitutos" element={<Substitutes />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

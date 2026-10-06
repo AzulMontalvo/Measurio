@@ -14,7 +14,7 @@ export default function SizeConverter() {
       : moldSizes.map((m) => m.cm);
 
   return (
-    <div>
+    <div className="converter-form converter-form--pair">
       <select value={from} onChange={(e) => {
         const newFrom = e.target.value as "in" | "cm";
         setFrom(newFrom);
@@ -41,7 +41,7 @@ export default function SizeConverter() {
         ))}
       </select>
 
-      <p>
+      <p className="converter-result">
         {result !== null
           ? `Equivale a ${result} ${from === "in" ? "cm" : "in"}`
           : "No hay equivalencia estándar"}

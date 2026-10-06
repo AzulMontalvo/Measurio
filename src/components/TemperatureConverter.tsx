@@ -20,7 +20,7 @@ export default function TemperatureConverter() {
   const roundedResult = roundUp(result);
 
   return (
-    <div>
+    <div className="converter-form">
       <input
         type="number"
         value={value}
@@ -35,6 +35,8 @@ export default function TemperatureConverter() {
         ))}
       </select>
 
+      <span className="converter-arrow" aria-hidden="true">→</span>
+
       <select value={to} onChange={(e) => setTo(e.target.value)}>
         {keys.map((key) => (
           <option key={key} value={key}>
@@ -43,7 +45,7 @@ export default function TemperatureConverter() {
         ))}
       </select>
 
-      <p>{roundedResult}</p>
+      <p className="converter-result">{roundedResult}</p>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export default function Converter({ units }: ConverterProps) {
   const result = convert(value, from, to, units);
 
   return (
-    <div>
+    <form className="converter-form">
       <input
         type="number"
         value={value}
@@ -39,6 +39,8 @@ export default function Converter({ units }: ConverterProps) {
         ))}
       </select>
 
+      <span className="converter-arrow" aria-hidden="true">→</span>
+
       <select value={to} onChange={(e) => setTo(e.target.value)}>
         {keys.map((key) => (
           <option key={key} value={key}>
@@ -47,7 +49,7 @@ export default function Converter({ units }: ConverterProps) {
         ))}
       </select>
 
-      <p>{result.toFixed(2)}</p>
-    </div>
+      <output className="converter-result">{result.toFixed(2)}</output>
+    </form>
   );
 }
